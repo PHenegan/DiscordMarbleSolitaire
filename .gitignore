@@ -1,1 +1,5 @@
 MarbleSolitaire.jar
+out/
+build/
+.gradle/
+.idea/
