@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.phenegan'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    flatDir {
+        dirs 'libs';
+    }
+}
+
+dependencies {
+    implementation 'com.discord4j:discord4j-core:3.2.2'
+    implementation files('libs/MarbleSolitaire.jar')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
