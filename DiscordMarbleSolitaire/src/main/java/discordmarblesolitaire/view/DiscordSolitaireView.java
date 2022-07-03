@@ -26,7 +26,13 @@ public class DiscordSolitaireView implements TextChannelView {
     Objects.requireNonNull(message);
     Objects.requireNonNull(channel);
 
-    channel.createMessage(message).block();
+    if (message.length() >= 2000) {
+      channel.createMessage("Error: this message cannot be displayed due to "
+          + "the Discord character limit.");
+    }
+    else {
+      channel.createMessage(message).block();
+    }
   }
 
   @Override
